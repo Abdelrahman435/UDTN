@@ -1,0 +1,31 @@
+### Create a new Product
+POST  http://localhost:3009/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzM3NDA5NjA5LCJleHAiOjE3Mzc0MTMyMDl9.8MrzIMN-jDTrGJ7SCqD0QbS0IKRq0YsW_-jsdR_ZtNc
+content-type: application/json
+
+{
+    "name":"test",
+    "description": "test0000test",
+    "price": 79,
+    "stock":66
+}
+
+### get all
+GET  http://localhost:3009/products
+
+### get one product
+GET  http://localhost:3009/products/1
+
+### update product
+PUT  http://localhost:3009/products/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzM3NDA5NjA5LCJleHAiOjE3Mzc0MTMyMDl9.8MrzIMN-jDTrGJ7SCqD0QbS0IKRq0YsW_-jsdR_ZtNc
+Content-Type: application/json
+
+{
+    "name": "updated name",
+    "price": 99
+}
+
+### Delete product
+DELETE  http://localhost:3009/products/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzM3NDA5NjA5LCJleHAiOjE3Mzc0MTMyMDl9.8MrzIMN-jDTrGJ7SCqD0QbS0IKRq0YsW_-jsdR_ZtNc
