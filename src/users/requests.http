@@ -16,32 +16,3 @@ content-type: application/json
     "email":"test1@example.com",
     "password": "test0000"
 }
-
-### Get the current signed in user
-Get http://localhost:3000/auth/whoami
-
-### sign out
-Post http://localhost:3000/auth/signout
-
-### find a particular user
-GET http://localhost:3000/auth/3
-
-### find all users with a given email
-GET http://localhost:3000/auth?email=test@example.com
-
-### Delete a user
-DELETE http://localhost:3000/auth/2
-
-### Update a user
-PATCH http://localhost:3000/auth/3
-content-type: application/json
-
-{
-    "email":"sara❤️@example.com"
-}
-
-### Set a color
-GET http://localhost:3000/auth/colors/blue
-
-### Get the color
-GET http://localhost:3000/auth/color
