@@ -1,6 +1,6 @@
 ### Create a new Product
 POST  http://localhost:3009/products
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzM3NDA5NjA5LCJleHAiOjE3Mzc0MTMyMDl9.8MrzIMN-jDTrGJ7SCqD0QbS0IKRq0YsW_-jsdR_ZtNc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzM3NTAxNTcxLCJleHAiOjE3Mzc1MDUxNzF9.wwdB48KjI0iUNRbsvOJYNgOy3djl2PPR_20HcOx3cRU
 content-type: application/json
 
 {

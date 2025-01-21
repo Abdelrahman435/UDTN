@@ -12,8 +12,15 @@ import { AuthService } from './auth.service';
 import { AuthGuard } from 'src/guards/auth.guard';
 import { RolesGuard } from 'src/guards/roles.guard';
 import { Roles } from './decorators/roles.decorator';
+import {
+  ApiOperation,
+  ApiResponse,
+  ApiTags,
+  ApiBearerAuth,
+} from '@nestjs/swagger';
 
 @Controller('auth')
+@ApiTags('auth') // Tag the controller for Swagger
 export class UsersController {
   constructor(
     private userService: UsersService,
@@ -21,6 +28,9 @@ export class UsersController {
   ) {}
 
   @Post('/register')
+  @ApiOperation({ summary: 'Register a new user' })
+  @ApiResponse({ status: 201, description: 'User successfully registered.' })
+  @ApiResponse({ status: 400, description: 'Bad request.' })
   async createUser(@Body() body: CreateUserDto, @Session() session: any) {
     const userResponse = await this.authService.signup(
       body.email,
@@ -34,6 +44,9 @@ export class UsersController {
   }
 
   @Post('/login')
+  @ApiOperation({ summary: 'Login a user and receive authentication token' })
+  @ApiResponse({ status: 200, description: 'User successfully logged in.' })
+  @ApiResponse({ status: 401, description: 'Unauthorized.' })
   async signin(@Body() body: CreateUserDto, @Session() session: any) {
     const userResponse = await this.authService.signin(
       body.email,
