@@ -2,6 +2,7 @@ import {
   BadRequestException,
   Injectable,
   NotFoundException,
+  UnauthorizedException,
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { UsersService } from './users.service';
@@ -36,14 +37,14 @@ export class AuthService {
 
     const [user] = await this.usersService.find(email);
     if (!user) {
-      throw new NotFoundException('User not found');
+      throw new UnauthorizedException('Invalid credentials'); // Unified message
     }
 
     const [salt, storedHash] = user.password.split('.');
     const hash = (await scrypt(password, salt, 32)) as Buffer;
 
     if (storedHash !== hash.toString('hex')) {
-      throw new BadRequestException('Invalid email or password');
+      throw new UnauthorizedException('Invalid credentials'); // Unified message
     }
 
     return this.generateToken(user); 
