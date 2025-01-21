@@ -10,9 +10,9 @@ import {
 } from '@nestjs/common';
 import { CreateProductDto } from './dtos/create-product.dto';
 import { ProductsService } from './product.service';
-import { AuthGuard } from 'src/guards/auth.guard';
-import { RolesGuard } from 'src/guards/roles.guard';
-import { Roles } from 'src/users/decorators/roles.decorator';
+import { AuthGuard } from '../guards/auth.guard';
+import { RolesGuard } from '../guards/roles.guard';
+import { Roles } from '../users/decorators/roles.decorator';
 import { HttpCode } from '@nestjs/common';
 
 @Controller('products')

@@ -92,7 +92,7 @@ describe('AuthService', () => {
     const mockUser = {
       id: 1,
       email: 'test@example.com',
-      password: 'salt.correcthash', 
+      password: 'salt.correcthash',
     };
 
     service['usersService'].find = jest.fn().mockResolvedValue([mockUser]);
